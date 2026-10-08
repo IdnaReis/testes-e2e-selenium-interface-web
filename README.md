@@ -1,79 +1,73 @@
-🧪 Testes de ponta a ponta (E2E) — Interface Web
+# 🧪 Testes E2E — Interface Web com Selenium + Python
 
-> Automação de fluxos completos de usuário simulando comportamento real em uma aplicação web.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
 
-## 📋 Sobre o Projeto
+Automação de fluxos completos de usuário no site de e-commerce [Automation Exercise](https://automationexercise.com), um site público para prática de QA, usando **Page Object Model**.
 
-Este projeto demonstra a criação de Testes End-to-End (E2E), cobrindo os fluxos principais de uma aplicação web de e-commerce ([automationexercise.com](https://automationexercise.com), site público para prática de QA):
+## 🧪 Testes Implementados
 
-- 🔒 **Login** — Acesso do usuário (com credenciais válidas e inválidas)
-- 📝 **Cadastro** — Registro de novo usuário
-- 🛒 **Checkout** — Finalização de compra
+| Fluxo | Teste | Resultado |
+|---|---|---|
+| Login | `test_login_com_credenciais_validas` | ✅ Passou |
+| Login | `test_login_com_credenciais_invalidas` | ✅ Passou |
+| Cadastro | `test_criar_nova_conta_com_sucesso` | ✅ Passou |
+| Checkout | `test_finalizar_compra_com_sucesso` | ✅ Passou |
 
-O objetivo é simular exatamente o caminho que um usuário real faria na plataforma, validando cada etapa do início ao fim.
+## 🛠️ Tecnologias
 
-## 🛠️ Tecnologias Utilizadas
-
-| Ferramenta | Descrição |
+| Ferramenta | Uso |
 |---|---|
-| 🐍 Python | Linguagem de programação |
-| 🌐 Selenium | Automação de navegador |
-| ✅ Pytest | Framework de testes |
-| 📄 pytest-html | Relatórios em HTML |
-| 🔧 webdriver-manager | Gerencia o driver do Chrome automaticamente |
+| Python | Linguagem dos testes |
+| Selenium | Automação do navegador |
+| Pytest | Framework de testes |
+| pytest-html | Relatório HTML |
+| webdriver-manager | Gerencia o driver do Chrome |
 
-## 📂 Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
-```
-e2e-tests-portfolio/
-├── pages/                  # Page Object Model (uma classe por tela)
-│   ├── base_page.py
-│   ├── login_page.py
-│   ├── register_page.py
-│   └── checkout_page.py
-├── tests/                  # Casos de teste
-│   ├── test_login.py
-│   ├── test_cadastro.py
-│   └── test_checkout.py
-├── conftest.py             # Configuração do driver + captura de screenshots
-├── pytest.ini              # Configuração do pytest e do relatório HTML
-├── requirements.txt
-└── reports/                # Relatório HTML gerado após a execução
-```
 
 ## ▶️ Como Executar
 
-1. **Instale as dependências:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+pytest
+```
 
-2. **Ajuste os dados de teste** (opcional, mas recomendado):
-   - Em `tests/test_login.py` e `tests/test_checkout.py`, troque `VALID_EMAIL` / `EMAIL` e `PASSWORD` por uma conta real criada no site (você pode rodar `test_cadastro.py` primeiro para criar uma).
+Em `tests/test_login.py` e `tests/test_checkout.py`, troque `VALID_EMAIL`, `EMAIL` e `PASSWORD` por uma conta real do site (rode `test_cadastro.py` primeiro para criar uma).
 
-3. **Rode os testes:**
-   ```bash
-   pytest
-   ```
-   Isso já vai gerar automaticamente:
-   - Um relatório HTML em `reports/report.html`
-   - Screenshots de cada teste (passou ou falhou) em `screenshots/`
+Ao rodar, são gerados localmente um relatório HTML em `reports/` e prints de cada teste em `screenshots/`.
 
-4. **Rode um arquivo específico:**
-   ```bash
-   pytest tests/test_cadastro.py -v
-   ```
+## 📸 Evidências
 
-## 📊 Evidências
+**Login com credenciais válidas**
 
-- **Relatório HTML**: `reports/report.html` — mostra o resultado de cada teste, tempo de execução e logs
-- **Screenshots**: `screenshots/` — print da tela ao final de cada teste, nomeado com o resultado (ex: `test_login_com_credenciais_validas_PASSOU.png`)
+![Login válido](evidencias%20projeto/test_login_com_credenciais_validas_PASSOU.png)
 
-## 🎯 Próximos passos
+**Login com credenciais inválidas**
 
-- Adicionar testes de regressão adicionais (ex: recuperação de senha, edição de perfil)
-- Integrar com GitHub Actions para rodar os testes automaticamente a cada commit
-- Adicionar testes de responsividade (mobile/desktop)
+![Login inválido](evidencias%20projeto/test_login_com_credenciais_invalidas_PASSOU.png)
 
----
-Desenvolvido por Idna Reis — [GitHub](https://github.com/IdnaReis) | [LinkedIn](https://linkedin.com/in/qaxia-tech).
+**Cadastro de nova conta**
+
+![Cadastro](evidencias%20projeto/test_criar_nova_conta_com_sucesso_PASSOU.png)
+
+**Checkout**
+
+![Checkout](evidencias%20projeto/test_finalizar_compra_com_sucesso_PASSOU.png)
+
+## 🚀 Próximos Passos
+
+- Testes de recuperação de senha e edição de perfil
+- Integração com GitHub Actions
+- Testes de responsividade (mobile/desktop)
+
+## 👩‍💻 Autora
+
+**Idna Reis**
+
+QA | Analista de Qualidade | Automação de Testes
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/idna-reis)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/IdnaReis)
